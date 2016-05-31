@@ -1,0 +1,18 @@
+<section class="pet" ng-init="getAnimals()">
+
+  <h2>Favorite Pets!</h2>
+  <h3>Favorite Count: {{count}}</h3>
+  <p>Sort By: </p>
+  <select ng-model="sortBy">
+    <option value="type" ng-model="sortBy">Type</option>
+    <option value="name" ng-model="sortBy">Name</option>
+  </select>
+  <div class="favorite" ng-repeat="animal in animals | orderBy: sortBy">
+    <img ng-src={{animal.imageSrc}} />
+    <h2>Name: {{animal.name}}</h2>
+    <p>ID: {{animal.id}}</p>
+    <p>{{animal.description}}</p>
+    <button ng-click="deleteFavorite(animal._id)">Delete</button>
+  </div>
+
+</section>

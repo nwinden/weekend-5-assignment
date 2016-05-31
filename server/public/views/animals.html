@@ -1,0 +1,23 @@
+<section>
+
+  <h2>Choose an Animal Type!</h2>
+  <h3 ng-init="getFavoriteCount()">Favorite Count: {{count}}</h3>
+  <div>
+    <button ng-click="getRandomPet(petSelect)">Click to Get Random :</button>
+    <select class="petSelect" ng-model="petSelect" ng-change="getRandomPet()">
+      <option value="dog" ng-model="petSelect" >Dog</option>
+      <option value="cat" ng-model="petSelect" >Cat</option>
+      <option value="bird" ng-model="petSelect" >Bird</option>
+      <option value="pig" ng-model="petSelect" >Pig</option>
+    </select>
+  </div>
+  <div class="animal" ng-show="animal.name">
+    <img src={{animal.media.photos.photo[3].$t}} />
+    <h2>Name: {{animal.name.$t}}</h2>
+    <p>ID: {{animal.id.$t}}</p>
+    <p>{{animal.description.$t ? animal.description.$t : "No description provided" }}</p>
+    <button ng-click="addToFavorites(animal)">Favorite This Animal!</button>
+  </div>
+
+
+</section>
