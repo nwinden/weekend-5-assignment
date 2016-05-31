@@ -22,7 +22,7 @@ petApp.controller('animalController', ['$scope', '$http', function($scope, $http
     pet.id = randomPet.id.$t;
     pet.name = randomPet.name.$t;
     pet.description = randomPet.description.$t ? randomPet.description.$t.substring(0,100) + '...' : 'No description provided';
-    pet.imageSrc = randomPet.media.photos.photo[3].$t;
+    pet.imageSrc = randomPet.media.photos != undefined ? randomPet.media.photos.photo[3].$t : 'http://i.imgur.com/uASx13d.gif';
     pet.type = randomPet.animal.$t;
 
     $http.post('/pets', pet)
@@ -46,6 +46,7 @@ petApp.controller('animalController', ['$scope', '$http', function($scope, $http
     $http.jsonp(request).then(
       function(response) {
         $scope.animal = response.data.petfinder.pet;
+        console.log(response.data);
       }
     )
   }

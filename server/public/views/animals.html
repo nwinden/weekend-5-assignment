@@ -5,10 +5,10 @@
   <div>
     <button ng-click="getRandomPet(petSelect)">Click to Get Random :</button>
     <select class="petSelect" ng-model="petSelect" ng-change="getRandomPet()">
-      <option value="dog" ng-model="petSelect" >Dog</option>
-      <option value="cat" ng-model="petSelect" >Cat</option>
-      <option value="bird" ng-model="petSelect" >Bird</option>
-      <option value="pig" ng-model="petSelect" >Pig</option>
+      <option value="dog" >Dog</option>
+      <option value="cat" >Cat</option>
+      <option value="bird" >Bird</option>
+      <option value="pig" >Pig</option>
     </select>
   </div>
   <div class="animal" ng-show="animal.name">
